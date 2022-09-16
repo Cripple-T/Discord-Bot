@@ -17,12 +17,7 @@ client = commands.Bot(command_prefix="bussy ", intents=intents)
 language = ["en"]
 
 Bois = {
-    'Midas':346197400781586443,
-    'Juul':409649079879204865,
-    'Storm':420967235419635723,
-    'Sten':459045285440651278,
-    'Thijs':887348339794911293,
-    'Tijn':420967235419635723
+    #'Friend Name':Discord ID,
 }
 
 correctLanguages = ["af","ar","bg","bn","bs","ca","cs","cy","da","de","el","en","eo","es","et","fi","fr","gu","hi","hr","hu","hy","id","is","it","ja","jw","km","kn","ko","la","lv","mk","ml","mr","my","ne","nl","no","pl","pt","ro","ru","si","sk","sq","sr","su","sv","sw","ta","te","th","tl","tr","uk","ur","vi","zh-CN","zh-TW","zh"]
@@ -53,7 +48,7 @@ async def scheetje(ctx):
 
 @client.event # Join geluidjes voor de bois
 async def on_voice_state_update(member, before, after):
-    if member.id == Bois["Sten"]:
+    if member.id == Bois["FriendName"]:
         if before.channel == None:
             if after.channel != None:
                 channel = after.channel
@@ -62,7 +57,7 @@ async def on_voice_state_update(member, before, after):
                 player = voice.play(source)
                 time.sleep(2)
                 await voice.disconnect()
-    if member.id == Bois["Storm"]:
+    if member.id == Bois["FriendName"]:
         if before.channel == None:
             if after.channel != None:
                 channel = after.channel
@@ -80,7 +75,7 @@ async def on_voice_state_update(member, before, after):
                 player = voice.play(source)
                 time.sleep(4)
                 await voice.disconnect()
-    if member.id == Bois["Midas"]:
+    if member.id == Bois["FriendName"]:
         if before.channel == None:
             if after.channel != None:
                 channel = after.channel
@@ -89,7 +84,7 @@ async def on_voice_state_update(member, before, after):
                 player = voice.play(source)
                 time.sleep(10)
                 await voice.disconnect()
-    if member.id == Bois["Thijs"]:
+    if member.id == Bois["FriendName"]:
         if before.channel == None:
             if after.channel != None:
                 channel = after.channel
@@ -98,7 +93,7 @@ async def on_voice_state_update(member, before, after):
                 player = voice.play(source)
                 time.sleep(2)
                 await voice.disconnect() 
-    if member.id == Bois["Juul"]:
+    if member.id == Bois["FriendName"]:
         if before.channel == None:
             if after.channel != None:
                 channel = after.channel
@@ -110,9 +105,9 @@ async def on_voice_state_update(member, before, after):
 
 @client.event # Geluidjes of berichtjes voor typen
 async def on_message(message):
-    if message.author.id == Bois["Tijn"]:
+    if message.author.id == Bois["FriendName"]:
         await message.channel.send("boeie")
-    if message.author.id == Bois["Storm"]:
+    if message.author.id == Bois["FriendName"]:
         if message.author.voice != None:
             channel = message.author.voice.channel
             voice = await channel.connect()
@@ -125,15 +120,15 @@ async def on_message(message):
 
 @client.event # Sten 
 async def on_typing(channel, user, when):
-    if user.id == Bois["Sten"]:
+    if user.id == Bois["FriendName"]:
         await channel.send("boeie sten")
 
 @client.command() # Random kick
 async def kick(ctx):
     if ctx.author.voice != None:
         if ctx.author.permissions_in(ctx.author.voice.channel).move_members:
-            if ctx.author.id == Bois["Thijs"]:
-                member = Bois["Thijs"]
+            if ctx.author.id == Bois["FriendName"]:
+                member = Bois["FriendName"]
                 await member.move_to(None)
             else:
                 channel = ctx.author.voice.channel
